@@ -1,3 +1,5 @@
+[![GitHub issues](https://img.shields.io/github/issues/xinabox/xSI01.svg)](https://github.com/xinabox/xSI01/issues)
+
 # ☒CHIP SI01
 <img src="extras/SI01 V1.0.1.JPG" width="300" align="right">
 Triple Axis Accelerometer, Magnetometer and Gyroscope
