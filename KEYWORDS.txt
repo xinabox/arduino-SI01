@@ -1,0 +1,39 @@
+#######################################
+# Syntax Coloring Map For SI01
+#######################################
+
+#######################################
+# Instance				(KEYWORD1)
+#######################################
+
+SI01					 KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin   				KEYWORD2
+poll					KEYWORD2
+getAX					KEYWORD2
+getAY					KEYWORD2
+getAZ					KEYWORD2
+getGX					KEYWORD2
+getGY					KEYWORD2
+getGZ					KEYWORD2
+getMX					KEYWORD2
+getMY					KEYWORD2
+getMZ					KEYWORD2
+getTemperature			KEYWORD2
+getGForce				KEYWORD2
+getRoll					KEYWORD2
+getPitch				KEYWORD2
+getYaw					KEYWORD2
+
+#######################################
+# Constants 			(LITERAL1)
+#######################################
+
+SI01_ADDR_00			LITERAL1
+SI01_ADDR_01			LITERAL1
+SI01_ADDR_10			LITERAL1
+
