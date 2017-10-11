@@ -40,7 +40,7 @@ void xSI01::poll(void){
 // Begin Sensor Setup with default parameters
 bool xSI01::begin(void){ 
 	uint16_t ID = 0;
-	ID = begin(SI01_ADDR_00);
+	ID = begin(SI01_ADDR_0);
 	return ID;
 }
 
@@ -73,10 +73,10 @@ void xSI01::setSensitivity(float sensitivityACC, float sensitivityGYRO, float se
 /*-----------------Private Class Function----------------*/
 // set the I2C address
 void xSI01::setAddress(uint8_t _addr){
-	if(_addr == 0){
+	if(_addr == 1){
 		LSM9DS1_AG_I2C_ADDRESS = 0x6A;
 		LSM9DS1_M_I2C_ADDRESS = 0x1C;
-	} else if(_addr == 1) {
+	} else if(_addr == 2) {
 		LSM9DS1_AG_I2C_ADDRESS = 0x6B;
 		LSM9DS1_M_I2C_ADDRESS = 0x1E;
 	}

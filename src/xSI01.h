@@ -20,9 +20,9 @@
 #include "xSI01_CONFIG.h"
 
 //Device I2C Address
-#define SI01_ADDR_00	1
-#define SI01_ADDR_01	1
-#define SI01_ADDR_01 	2
+#define SI01_ADDR_0		1
+#define SI01_ADDR_1		2
+#define SI01_DEFAULT	2
 
 // Status Registers
 #define STATUS_REG_A		0x17
