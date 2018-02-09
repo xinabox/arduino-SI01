@@ -27,9 +27,22 @@ xSI01::xSI01(void){
 	gZ = mZ = aZ = 0;
 	roll = pitch = yaw = 0;
 	gForce = 0;
+	LSM9DS1_AG_I2C_ADDRESS = 0x6A;
+	LSM9DS1_M_I2C_ADDRESS = 0x1C;
 	initSensor();
 }
 
+xSI01::xSI01(uint8_t I2C_AG, uint8_t I2C_M){
+	// Initialize values to zero
+	gX = mX = aX = 0;
+	gY = mY = aY = 0;
+	gZ = mZ = aZ = 0;
+	roll = pitch = yaw = 0;
+	gForce = 0;	
+	LSM9DS1_AG_I2C_ADDRESS = I2C_AG;
+	LSM9DS1_M_I2C_ADDRESS = I2C_M;
+	initSensor();	
+}
 // Poll Sensor for Data
 void xSI01::poll(void){
 	readAccel();
@@ -71,17 +84,6 @@ void xSI01::setSensitivity(float sensitivityACC, float sensitivityGYRO, float se
 }
 
 /*-----------------Private Class Function----------------*/
-// set the I2C address
-void xSI01::setAddress(uint8_t _addr){
-	if(_addr == 1){
-		LSM9DS1_AG_I2C_ADDRESS = 0x6A;
-		LSM9DS1_M_I2C_ADDRESS = 0x1C;
-	} else if(_addr == 2) {
-		LSM9DS1_AG_I2C_ADDRESS = 0x6B;
-		LSM9DS1_M_I2C_ADDRESS = 0x1E;
-	}
-}
-
 // WHO_AM_I check if sensor is present
 uint16_t xSI01::WHO_AM_I(void){
 	uint8_t AG_ID, M_ID;
@@ -98,33 +100,33 @@ uint16_t xSI01::WHO_AM_I(void){
 
 // initialize sensor setup parameters
 void xSI01::initSensor(void){
-	setup.gyro.scale 		= 0x00; 
+	setup.gyro.scale 	= 0x00; 
 	setup.gyro.bandwidth 	= 0x00; 
 	setup.gyro.sampleRate 	= 0xC0; 
-	setup.gyro.lowpower		= false;
-	setup.gyro.HPF			= false;
+	setup.gyro.lowpower	= false;
+	setup.gyro.HPF		= false;
 	setup.gyro.HPF_CutOFF	= false;
 	setup.gyro.enable_axis	= 0x38;
 	setup.gyro.latchedIRQ 	= 0x02;
 
-	setup.accel.scale		= 0x00;
+	setup.accel.scale	= 0x00;
 	setup.accel.bandwidth	= 0x00;
 	setup.accel.sampleRate	= 0xC0;
 	setup.accel.enable_axis	= 0x38;
 	setup.accel.lowpower	= false;
 
-	setup.mag.scale			= 0x00;
-	setup.mag.bandwidth		= 0x80;
+	setup.mag.scale		= 0x00;
+	setup.mag.bandwidth	= 0x80;
 	setup.mag.sampleRate	= 0x1C;
 	setup.mag.performanceXY = 0x60;
 	setup.mag.performanceZ 	= 0x0C;
-	setup.mag.mode			= 0x00;
-	setup.mag.lowpower		= false;
+	setup.mag.mode		= 0x00;
+	setup.mag.lowpower	= false;
 	setup.mag.enable_axis	= 0x00;
-	setup.mag.fast_read		= 0x00;
-	setup.mag.BDU			= 0x00;
+	setup.mag.fast_read	= 0x00;
+	setup.mag.BDU		= 0x00;
 
-	setup.temp.enabled		= true;
+	setup.temp.enabled	= true;
 }
 
 /********************************************************
@@ -373,5 +375,3 @@ float xSI01::getYaw(void){
 	yaw *= 180.0/M_PI;
 	return yaw;
 }
-
-xSI01 SI01 = xSI01();
