@@ -8,22 +8,26 @@
   
   The sensor communicates over the I2C Bus.
   
-  ------------------------TIPS--------------------------
-  Comment out this line ----->Wire.pins(2, 14); 
-  for support on other Core Modules
-  
 *************************************************************/
 
 #include <xCore.h>
 #include <xSI01.h>
 
+xSI01 SI01;
 
 #define PRINT_SPEED 250
 static unsigned long lastPrint = 0;
 
 void setup() {
+  // Start the Serial Monitor at 115200 BAUD
   Serial.begin(115200);
-  Wire.begin(2, 14);
+  
+	// Set the I2C Pins for CW01
+	#ifdef ESP8266
+	  Wire.pins(2, 14);
+	  Wire.setClockStretchLimit(15000);
+	#endif
+  
   if (!SI01.begin()) {
     Serial.println("Failed to communicate with SI01.");
     Serial.println("Check the Connector");
