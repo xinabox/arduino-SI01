@@ -132,10 +132,10 @@
 #define OUT_Z_H_M			0x2D
 
 // Linear Acceleration: mg per LSB
-#define LSM9DS1_ACCEL_MG_LSB_2G 			0.000061
-#define LSM9DS1_ACCEL_MG_LSB_4G 			0.000122
-#define LSM9DS1_ACCEL_MG_LSB_8G 			0.000244
-#define LSM9DS1_ACCEL_MG_LSB_16G 			0.000732
+#define LSM9DS1_ACCEL_MG_LSB_2G 		0.000061
+#define LSM9DS1_ACCEL_MG_LSB_4G 		0.000122
+#define LSM9DS1_ACCEL_MG_LSB_8G 		0.000244
+#define LSM9DS1_ACCEL_MG_LSB_16G 		0.000732
 
 // Magnetic Field Strength: gauss range
 #define LSM9DS1_MAG_MGAUSS_4GAUSS      		0.00014
@@ -167,6 +167,7 @@ class xSI01: public xCoreClass
 		* Creates a new instance of Sensor class.
 		*/	
 		xSI01();
+		xSI01(uint8_t I2C_AG, uint8_t I2C_M);
 
 		/*
 		* Runs the setup of the sensor for all three parts 
@@ -318,15 +319,6 @@ class xSI01: public xCoreClass
 		/*
 		* Set the I2C Address 
 		*
-		* @param, 	_addr the selection for configurable I2C address
-		*			The Address can be set on the solderable jumpers for either ADDR0, ADDR1
-		* @return none
-		*/
-		void setAddress(uint8_t _addr);
-
-		/*
-		* Set the I2C Address 
-		*
 		* @return WHO_AM_I, combined ID of AG and MAG
 		*/
 		uint16_t WHO_AM_I(void);
@@ -395,8 +387,6 @@ class xSI01: public xCoreClass
 		float roll, pitch, yaw;
 		float gForce;
 };
-
-extern xSI01 SI01;
 
 #endif
 
