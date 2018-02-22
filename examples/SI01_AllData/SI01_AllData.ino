@@ -27,7 +27,9 @@ void setup() {
 	  Wire.pins(2, 14);
 	  Wire.setClockStretchLimit(15000);
 	#endif
-  
+
+	Wire.begin()
+		
   if (!SI01.begin()) {
     Serial.println("Failed to communicate with SI01.");
     Serial.println("Check the Connector");
