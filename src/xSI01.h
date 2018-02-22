@@ -179,17 +179,6 @@ class xSI01: public xCoreClass
 		bool begin(void);
 
 		/*
-		* Runs the setup of the sensor for all three parts 
-		* Magnotometer, Accelerometer and GyroScope.
-		*
-		* @param sensitivityACC, linear accelertion.
-		* @param sensitivityGYRO, angular rate.
-		* @param sensitivityMAG, magnetic.
-		* @return true if setup was successful.
-		*/		
-		bool begin(uint8_t _addr);
-
-		/*
 		* Request for the sensor to take a reading from
 		* Magnotometer, Accelerometer and GyroScope.
 		* Store data in private variables.
@@ -389,5 +378,3 @@ class xSI01: public xCoreClass
 };
 
 #endif
-
-
