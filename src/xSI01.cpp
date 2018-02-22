@@ -32,6 +32,11 @@ xSI01::xSI01(void){
 	initSensor();
 }
 
+/* Constructor
+ *
+ * @param I2C_AG, Address if the Accelerometer and Gyroscope
+ * @param I2C_M, Address of the magnetometer 
+*/
 xSI01::xSI01(uint8_t I2C_AG, uint8_t I2C_M){
 	// Initialize values to zero
 	gX = mX = aX = 0;
@@ -51,28 +56,16 @@ void xSI01::poll(void){
 }
 
 // Begin Sensor Setup with default parameters
-bool xSI01::begin(void){ 
-	uint16_t ID = 0;
-	ID = begin(SI01_ADDR_0);
-	return ID;
-}
-
-// Begin Sensor Setup Address seletion input
-bool xSI01::begin(uint8_t _addr){
-	uint16_t ID = 0;
-
+bool xSI01::begin(void){
+	uint16_t ID;
 	setSensitivity(LSM9DS1_ACCEL_MG_LSB_2G, LSM9DS1_GYRO_DPS_DIGIT_245DPS, LSM9DS1_MAG_MGAUSS_4GAUSS);
-	setAddress(_addr);
-
 	ID = WHO_AM_I();
-
-	if(ID != ((AG_CHIP_ID<<8)| M_CHIP_ID)){
+	if(!ID){
 		return 0;
 	}
 	setupMag();
 	setupGyro();
 	setupAccel();
-
 	return ID;
 }
 
@@ -91,7 +84,7 @@ uint16_t xSI01::WHO_AM_I(void){
 	AG_ID = M_ID = 0;
 
 	AG_ID = xCore.read8(LSM9DS1_AG_I2C_ADDRESS, WHO_AM_I_AG);
-	M_ID = xCore.read8(LSM9DS1_M_I2C_ADDRESS, WHO_AM_I_M);
+	M_ID = xCore.read8(LSM9DS1_AG_I2C_ADDRESS, WHO_AM_I_M);
 
 	COMBINED_ID = ((AG_ID << 8)|M_ID);
 
