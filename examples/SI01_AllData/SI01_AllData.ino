@@ -28,7 +28,7 @@ void setup() {
 	  Wire.setClockStretchLimit(15000);
 	#endif
 
-	Wire.begin()
+	Wire.begin();
 		
   if (!SI01.begin()) {
     Serial.println("Failed to communicate with SI01.");
