@@ -60,7 +60,7 @@ bool xSI01::begin(void){
 	uint16_t ID;
 	setSensitivity(LSM9DS1_ACCEL_MG_LSB_2G, LSM9DS1_GYRO_DPS_DIGIT_245DPS, LSM9DS1_MAG_MGAUSS_4GAUSS);
 	ID = WHO_AM_I();
-	if(!ID){
+	if(ID != 0x683D){
 		return 0;
 	}
 	setupMag();
@@ -84,7 +84,7 @@ uint16_t xSI01::WHO_AM_I(void){
 	AG_ID = M_ID = 0;
 
 	AG_ID = xCore.read8(LSM9DS1_AG_I2C_ADDRESS, WHO_AM_I_AG);
-	M_ID = xCore.read8(LSM9DS1_AG_I2C_ADDRESS, WHO_AM_I_M);
+	M_ID = xCore.read8(LSM9DS1_M_I2C_ADDRESS, WHO_AM_I_M);
 
 	COMBINED_ID = ((AG_ID << 8)|M_ID);
 
