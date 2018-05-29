@@ -6,8 +6,6 @@
 # Instance				(KEYWORD1)
 #######################################
 
-SI01					 KEYWORD1
-
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
@@ -32,8 +30,4 @@ getYaw					KEYWORD2
 #######################################
 # Constants 			(LITERAL1)
 #######################################
-
-SI01_ADDR_00			LITERAL1
-SI01_ADDR_01			LITERAL1
-SI01_ADDR_10			LITERAL1
 
