@@ -19,11 +19,6 @@
 #include "xCore.h"
 #include "xSI01_CONFIG.h"
 
-//Device I2C Address
-#define SI01_ADDR_0		1
-#define SI01_ADDR_1		2
-#define SI01_DEFAULT	2
-
 // Status Registers
 #define STATUS_REG_A		0x17
 #define STATUS_REG_T		0x27
@@ -50,7 +45,7 @@
 #define INT_THS_H_M			0x33
 
 // LSM9DS1 Gyro and Accel Shared Registers
-#define WHO_AM_I_AG			0x0F
+
 #define CTRL_REG6_XL		0x20
 #define CTRL_REG1_AG		0x10
 
