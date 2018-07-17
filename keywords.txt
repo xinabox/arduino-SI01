@@ -30,7 +30,3 @@ getYaw					KEYWORD2
 #######################################
 # Constants 			(LITERAL1)
 #######################################
-<<<<<<< HEAD:KEYWORDS.txt
-
-=======
->>>>>>> origin/master:keywords.txt
