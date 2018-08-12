@@ -45,7 +45,7 @@
 #define INT_THS_H_M			0x33
 
 // LSM9DS1 Gyro and Accel Shared Registers
-
+#define WHO_AM_I_AG			0x0F
 #define CTRL_REG6_XL		0x20
 #define CTRL_REG1_AG		0x10
 
