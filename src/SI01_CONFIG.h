@@ -11,8 +11,8 @@
 	LSM9DS1 - http://www.st.com/content/ccc/resource/technical/document/datasheet/1e/3f/2a/d6/25/eb/48/46/DM00103319.pdf/files/DM00103319.pdf/jcr:content/translations/en.DM00103319.pdf
 */
 
-#ifndef xSI01_CONFIG_h
-#define xSI01_CONFIG_h
+#ifndef SI01_CONFIG_h
+#define SI01_CONFIG_h
 
 struct structGyroscope{
 	uint8_t scale;

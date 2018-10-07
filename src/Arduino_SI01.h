@@ -11,13 +11,13 @@
 	LSM9DS1 - http://www.st.com/content/ccc/resource/technical/document/datasheet/1e/3f/2a/d6/25/eb/48/46/DM00103319.pdf/files/DM00103319.pdf/jcr:content/translations/en.DM00103319.pdf
 */
 
-#ifndef xSI01_h
-#define xSI01_h
+#ifndef Arduino_SI01_h
+#define Arduino_SI01_h
 
 // System Includes
 #include <inttypes.h>
 #include "xCore.h"
-#include "xSI01_CONFIG.h"
+#include "SI01_CONFIG.h"
 
 // Status Registers
 #define STATUS_REG_A		0x17

@@ -11,7 +11,7 @@
 *************************************************************/
 
 #include <xCore.h>
-#include <xSI01.h>
+#include <Arduino_SI01.h>
 
 xSI01 SI01;
 
