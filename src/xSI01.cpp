@@ -11,7 +11,7 @@
 	LSM9DS1 - http://www.st.com/content/ccc/resource/technical/document/datasheet/1e/3f/2a/d6/25/eb/48/46/DM00103319.pdf/files/DM00103319.pdf/jcr:content/translations/en.DM00103319.pdf
 */
 
-#include <arduino-SI01.h>
+#include <xSI01.h>
 #include <SI01_CONFIG.h>
 #include <math.h>
 

@@ -11,8 +11,8 @@
 	LSM9DS1 - http://www.st.com/content/ccc/resource/technical/document/datasheet/1e/3f/2a/d6/25/eb/48/46/DM00103319.pdf/files/DM00103319.pdf/jcr:content/translations/en.DM00103319.pdf
 */
 
-#ifndef arduino-SI01_h
-#define arduino-SI01_h
+#ifndef xSI01_h
+#define xSI01_h
 
 // System Includes
 #include <inttypes.h>
