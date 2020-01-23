@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/xinabox/arduino-SI01.svg?branch=master)](https://travis-ci.org/xinabox/arduino-SI01)
 [![GitHub issues](https://img.shields.io/github/issues/xinabox/arduino-SI01.svg)](https://github.com/xinabox/arduino-SI01/issues)
 
 # ☒CHIP SI01
